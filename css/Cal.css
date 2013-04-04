@@ -1,134 +1,139 @@
 
 .title {
     font-size:
-
-
+}
 
 .button {
-				width: 113px;
-				height: 22px;
-				color: white;
-				background-image: url('../img/button.png');
-				background-size: 100% 100%;
-				background-repeat: no-repeat;
-				padding: 0px;
-				margin: 0px;
-				position: relative;
-				z-index: 1;
-				display: inline-block;
-				padding-top: 3px;
-			}
+    width: 113px;
+    height: 22px;
+    color: white;
+    background-image: url('../img/button.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-top: 3px;
+}
 
-			#calendar{
-				border-collapse: collapse;
-				border: 1px solid black;
-				position: relative;
-				top: -2px;
-				left: 0px;
-				background-image: url('../img/calBackground.png');
-				background-size: 100% 100%;
-			}
+#calendar{
+    border-collapse: collapse;
+    border: 1px solid black;
+    position: relative;
+    top: -2px;
+    left: 0px;
+    background-image: url('../img/calBackground.png');
+    background-size: 100% 100%;
+}
 
-			#calendar td {
-				border: 1px solid black;
-				padding: 4px;
-				width: 23px;
-				height: 26px;
-			}
+#calendar td {
+    border: 1px solid black;
+    padding: 4px;
+    width: 23px;
+    height: 26px;
+}
 
-			.today {
-				background-color: rgb(204,216,236);
-			}
+.today {
+    background-color: rgb(204,216,236);
+}
 
-			#calendar .selected {
-				border: 3px solid rgb(251,148,85);
-				padding: 3px;
-			}
+#calendar .selected {
+    border: 3px solid rgb(251,148,85);
+    padding: 3px;
+}
 
-			#top-menu .button, #top-menu .option {
-				text-align: center;
-				width: 76px;
-				padding-top: 3px;
-			}
+#top-menu .button, #top-menu .option {
+    text-align: center;
+    width: 96px;
+    padding-top: 3px;
+}
 
-			#month-selector {
-				top: 0px;
-				left: 0px;
-			}
+#month-selector {
+    top: 0px;
+    left: 0px;
+}
+#month-nav {
+    top: 0px;
+    left: 0px;
+}
 
-			#year-nav {
-				position: relative;
-				top: 0px;
-				left: -6px;
-			}
 
-			#groups {
-				top: 0px;
-				left: -12px;
-			}
+#year-nav {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
 
-			#day-list {
-				background-image: url('../img/listBackground.png');
-				width: 224px;
-				height: 125px;
-				position: relative;
-			}
+#groups {
+    top: 0px;
+    left: -12px;
+}
 
-			.list-item {
-				padding: 2px 0px;
-				font-size: 14px;
-				width: 214px;
-				background-image: url('../img/listItem.png');
-				background-size: 100% 100%;
-				position: relative;
-				padding-right: 10px;
-				top: -1px;
-			}
+#day-list {
+    background-image: url('../img/listBackground.png');
+    width: 224px;
+    height: 125px;
+    position: relative;
+}
 
-			.delete{
-				position: relative;
-				top: 2px;
-			}
+.list-item {
+    padding: 2px 0px;
+    font-size: 14px;
+    width: 214px;
+    background-image: url('../img/listItem.png');
+    background-size: 100% 100%;
+    position: relative;
+    padding-right: 10px;
+    top: -1px;
+}
 
-			.dropdown {
-				position: absolute;
-				display: none;
-				z-index: 2;
-			}
+.delete{
+    position: relative;
+    top: 2px;
+}
 
-			nav {
-				width: 76px;
-				display: inline-block;
-			}
+.dropdown {
+    position: absolute;
+    display: none;
+    z-index: 2;
+}
 
-			.option {
-				background-image: url('../img/listItem.png');
-				background-size: 100% 100%;
-				margin-top: -3px;
-				padding-bottom: 3px;
-			}
+nav {
+    width: 76px;
+    display: inline-block;
+}
 
-			#top-menu #month-dropdown,  #top-menu #year-dropdown{
-				padding-top: 0px;
-			}
+.option {
+    background-image: url('../img/listItem.png');
+    background-size: 100% 100%;
+    margin-top: -3px;
+    padding-bottom: 3px;
+}
 
-			.open {
-				display: inline-block;
-			}
+#top-menu #month-dropdown,  #top-menu #year-dropdown{
+    width: 96px;
+    padding-top: 0px;
+}
 
-			#bottom-menu {
-				margin-top: -3px;
-			}
+.open {
+    display: inline-block;
+}
 
-			.list-item {
-				margin-top: -2px;
-			}
+#bottom-menu {
+    margin-top: -3px;
+}
 
-			#bottom-menu .button {
-				margin-left: -1px;
-				text-align: center;
-			}
+.list-item {
+    margin-top: -2px;
+}
 
-			#add-list {
-				left: -6px;
-			}
+#bottom-menu .button {
+    margin-left: -1px;
+    text-align: center;
+}
+
+#add-list {
+    left: -6px;
+}
