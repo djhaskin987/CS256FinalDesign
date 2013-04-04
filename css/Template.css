@@ -1,0 +1,25 @@
+#phone-window {
+    height:597px;
+    width:306px;
+}
+
+#content-window {
+    width:255px;
+    height:383px;
+    vertical-align:top;
+    padding:0px;
+    margin:0px;
+    display:inline-block;
+    font-size:0px;
+    background-image: url('../img/Background_LightBlue.png');
+    
+}
+.title-bar {
+    font-size:10px;
+    width: 255px;
+    height: 31px;
+}
+
+#group-title-bar {
+    background-image: url('../img/Title_CalendarGroup.png');
+}
