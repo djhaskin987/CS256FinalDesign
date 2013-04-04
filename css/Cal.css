@@ -4,7 +4,7 @@
 }
 
 .button {
-    width: 113px;
+    width: 100px;
     height: 22px;
     color: white;
     background-image: url('../img/button.png');
@@ -43,11 +43,16 @@
     border: 3px solid rgb(251,148,85);
     padding: 3px;
 }
+#top-menu {
+    padding: -3px;
+    margin: -3px;
+    width: 255px;
+}
 
 #top-menu .button, #top-menu .option {
     text-align: center;
-    width: 96px;
-    padding-top: 3px;
+    width: 86px;
+//    padding-top: 3px;
 }
 
 #month-selector {
@@ -55,20 +60,22 @@
     left: 0px;
 }
 #month-nav {
+    width: 85px;
     top: 0px;
     left: 0px;
 }
 
-
 #year-nav {
     position: relative;
+    width: 85px;
     top: 0px;
     left: 0px;
 }
 
 #groups {
+    width: 85px;
     top: 0px;
-    left: -12px;
+    left: 0px;
 }
 
 #day-list {
@@ -108,13 +115,13 @@ nav {
 .option {
     background-image: url('../img/listItem.png');
     background-size: 100% 100%;
-    margin-top: -3px;
-    padding-bottom: 3px;
+//    margin-top: -3px;
+//    padding-bottom: 3px;
 }
 
 #top-menu #month-dropdown,  #top-menu #year-dropdown{
-    width: 96px;
-    padding-top: 0px;
+    width: 86px;
+    padding-top: -1px;
 }
 
 .open {
