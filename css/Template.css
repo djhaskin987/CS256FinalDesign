@@ -1,3 +1,7 @@
+body {
+    font-family: "Bookman Old Style", "Bitstream Charter", "Times New Roman", serif;
+    font-size:20px;
+}
 #phone-window {
     height:597px;
     width:306px;
@@ -17,10 +21,20 @@
 
 
 .bar {
-    font-family: "Bookman Old Style", "Bitstream Charter", "Times New Roman", serif;
-    font-size:20px;
+    font-size: 20px;
     width: 255px;
     height: 30px;
+    padding-left: 5px;
+}
+
+.list-bar {
+    font-size: 20px;
+    width: 255px;
+    height: 20px;
+    padding: 5px;
+    float:left;
+    background-image: url('../img/Background_ListItem.png');
+    background-repeat: no-repeat;
 }
 
 #group-title-bar {
@@ -29,11 +43,26 @@
 
 #group-name {
     padding: 5px;
-    width: 200px;
+    width: 195px;
+    height: 20px;
+    float:left;
+}
+.list-item {
+    width: 195px;
     height: 20px;
     float:left;
 }
 .dropdown-button {
     size: 55px 24px;
-    padding-top: 3px;
+    padding-top: 6px;
+    padding-right: 5px;
+    float:right;
+}
+
+.delete-button {
+    size: 20px 20px;
+    position:relative;
+    top:-1px;
+    padding-right: 15px;
+    float:right;
 }
