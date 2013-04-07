@@ -1,121 +1,129 @@
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Calendar</title>
-        <link rel="stylesheet" type="text/css" href="css/Cal.css">
-        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="js/date.js"></script>
-        <script src="js/CalView.js"></script>
-        <script>
-            $(document).ready(function(){
-                //render the calendar for the first time
-                var date = Date.today();
-                $('#month-selector').append(date.toString('MMMM'));
-                $('#year-selector').append(date.toString('yyyy'));
-                var today = parseInt(date.toString('d'));
-                renderCalendar(today, today);
-
-                //Close dropdown menus when the user clicks
-                $('body').on('click', function(e){
-                    $('.open').removeClass('open');
-                });
-
-                $('.option').on('click', function(e){
-                    var target = $(e.currentTarget);
-                    var newValue = target.text();
-                    if (target.parent().attr('id') == 'month-dropdown')
-                    $('#month-selector').html(newValue);
-                    else
-                    $('#year-selector').html(newValue);
-                    $('.open').removeClass('open');
-                    var date = Date.today();
-                    var today = 0;
-                    var month = $('#month-selector').html();
-                    var year = $('#year-selector').html();
-                    var current = date.toString('MMMM yyyy');
-                    if (current == month + ' ' + year){
-                        today = date.toString('d');
-                    }
-                    renderCalendar(today, today);
-                });
-
-                $('.button').on('click', function(e){
-                    var target = $(e.currentTarget);
-                    var dropdown = target.siblings('.dropdown');
-                    var current = $('.open');
-                    dropdown.addClass('open');
-                    current.removeClass('open');
-                    e.stopPropagation();
-                });
-
-                $('.delete').on('click', function(e){
-                    $(e.currentTarget).parent().remove();
-                });
-            });
-        </script>
-    </head>
-    <body>
-
-        <table cellspacing="0" cellpadding="0" border="0"
-            spacing="0" padding="0" align="center" style="vertical-align:top" >
-            <tr>
-                <td><img src="img/Phone11.png" width="27px"/></td>
-                <td><img src="img/Phone12.png"/></td>
-                <td><img src="img/Phone13.png"/></td>
-            </tr>
-            <tr>
-                <td><img src="img/Phone21.png"/></td>
-                <td spacing="0" padding="0" style="vertical-align:top"
-                    width="255px"
-                    id="content-window">
-                    <div id="top-menu"><nav id="month-nav"><div id="month-selector" class="button"></div><div id="month-dropdown" class="dropdown">
-                            <div class="option">January</div>
-                            <div class="option">February</div>
-                            <div class="option">March</div>
-                            <div class="option">April</div>
-                            <div class="option">May</div>
-                            <div class="option">June</div>
-                            <div class="option">July</div>
-                            <div class="option">August</div>
-                            <div class="option">September</div>
-                            <div class="option">October</div>
-                            <div class="option">November</div>
-                            <div class="option">December</div>
-                        </div></nav><nav id="year-nav"><div id="year-selector" class="button"></div><div id="year-dropdown" class="dropdown">
-                            <div class="option">2012</div>
-                            <div class="option">2013</div>
-                            <div class="option">2014</div>
-                            <div class="option">2015</div>
-                            <div class="option">2016</div>
-                        </div></nav><div id="groups" class="button">Groups</div></div>
-                    <table id="calendar">
-                    </table>
-                    <div id="day-list">
-                        <div id="todo-list" class="list-item">&nbsp;&nbsp;General To-Do List</div>
-                        <div class="list-item event">
-                            &nbsp;&nbsp;Birthday - 4 pm
-                            <img class="delete" src="img/delete.png" height="14" width="14" align="right">
-                        </div>
-                        <div class="list-item list">
-                            &nbsp;&nbsp;Groceries
-                            <img class="delete" src="img/delete.png" height="14" width="14" align="right">
-                        </div>
-                    </div>
-                    <div id="bottom-menu">
-                        <div id="add-event" class="button">+ Event</div>
-                        <div id="add-list" class="button">+ List</div>
-                    </div>
-
-                    <!-- CONTENT ENDS HERE -->
-                </td>
-                <td><img src="img/Phone23.png"/></td>
-            </tr>
-            <tr>
-                <td><img src="img/Phone31.png"/></td>
-                <td><img src="img/Phone32.png"/></td>
-                <td><img src="img/Phone33.png"/></td>
-            </tr>
-        </table>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Calendar</title>
+		<link rel="stylesheet" type="text/css" href="Cal.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="date.js"></script>
+		<script src="CalView.js"></script>
+		<script>
+			$(document).ready(function(){
+				//render the calendar for the first time
+				var date = Date.today();
+				$('#month-selector').append(date.toString('MMMM'));
+				$('#year-selector').append(date.toString('yyyy'));
+				var today = parseInt(date.toString('d'));
+				renderCalendar(today, today);
+				
+				//Close dropdown menus when the user clicks
+				$('body').on('click', function(e){
+					$('.open').removeClass('open');
+				});
+			
+				$('.option').on('click', function(e){
+					var target = $(e.currentTarget);
+					var newValue = target.text();
+					if (target.parent().attr('id') == 'month-dropdown')
+						$('#month-selector').html(newValue);
+					else
+						$('#year-selector').html(newValue);
+					$('.open').removeClass('open');
+					var date = Date.today();
+					var today = 0;
+					var month = $('#month-selector').html();
+					var year = $('#year-selector').html();
+					var current = date.toString('MMMM yyyy');
+					if (current == month + ' ' + year){
+						today = date.toString('d');
+					}
+					renderCalendar(today, today);
+				});
+				
+				$('.button').on('click', function(e){
+					var target = $(e.currentTarget);
+					var dropdown = target.siblings('.dropdown');
+					var current = $('.open');
+					dropdown.addClass('open');
+					current.removeClass('open');
+					e.stopPropagation();
+				});
+				
+				$('.delete').on('click', function(e){
+					$(e.currentTarget).parent().remove();
+				});
+				
+				$('#add-list').on('click', function(e){
+					window.location.href = 'EditList.html';	
+				});
+				
+				$('#todo-list').on('click', function(e){
+					window.location.href = 'GeneralList.html';	
+				});
+				
+				$('#groups').on('click', function(e){
+					window.location.href = 'Group.html';	
+				});
+				
+				$('#todo-list').on('click', function(e){
+					window.location.href = 'GeneralList.html';	
+				});
+				
+				$('.list-item.list').on('click', function(e){
+					window.location.href = 'ViewList.html';	
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="top-menu">
+			<nav id="month-nav">
+				<div id="month-selector" class="button"></div>
+				<div id="month-dropdown" class="dropdown">
+					<div class="option">January</div>
+					<div class="option">February</div>
+					<div class="option">March</div>
+					<div class="option">April</div>
+					<div class="option">May</div>
+					<div class="option">June</div>
+					<div class="option">July</div>
+					<div class="option">August</div>
+					<div class="option">September</div>
+					<div class="option">October</div>
+					<div class="option">November</div>
+					<div class="option">December</div>
+				</div>
+			</nav>
+			<nav id="year-nav">
+				<div id="year-selector" class="button"></div>
+				<div id="year-dropdown" class="dropdown">
+					<div class="option">2012</div>
+					<div class="option">2013</div>
+					<div class="option">2014</div>
+					<div class="option">2015</div>
+					<div class="option">2016</div>
+				</div>
+			</nav>
+			<div id="groups" class="button">
+				Groups
+			</div>
+		</div>
+		<table id="calendar">
+		</table>
+		<div id="day-list">
+			<div id="todo-list" class="list-item">&nbsp;&nbsp;General To-Do List</div>
+			<div class="list-item event">
+				&nbsp;&nbsp;Birthday - 4 pm
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+			<div class="list-item list">
+				&nbsp;&nbsp;Groceries
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+		</div>
+		<div id="bottom-menu">
+			<div id="add-event" class="button">+ Event</div>
+			<div id="add-list" class="button">+ List</div>
+		</div>
+	</body>
 </html>

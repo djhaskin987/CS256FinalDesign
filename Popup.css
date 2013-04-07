@@ -1,0 +1,40 @@
+#popup-group {
+	position: absolute;
+	z-index: 5;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#gray {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255,255,255);
+	opacity: 0.2;
+	z-index: 3;
+}
+
+#popup {
+	position: absolute;
+	top: 120px;
+	left: 20px;
+	width: 200px;
+}
+
+#popup-title {
+	background-image: url('popupTitle.png');
+	background-size: 100% 100%;
+	height: 20px;
+	text-align: center;
+	padding-top: 2px;
+	padding-right: 7px;
+}
+
+#popup-body {
+	margin-top: -1.2px;
+	padding-left: 10px;
+	background-image: url('popupBody.png');
+	background-size: 100% 100%;
+	min-height: 60px;
+}

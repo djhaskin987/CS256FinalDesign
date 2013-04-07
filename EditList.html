@@ -1,0 +1,155 @@
+<html>
+<head>
+		<meta charset="utf-8" />
+		<title>Edit List</title>
+		<link rel="stylesheet" type="text/css" href="list.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				$('#popup-group').hide();
+				$('#newTask').hide();
+				
+				//Close dropdown menus when the user clicks
+				$('body').on('click', function(e){
+					$('.open').removeClass('open');
+				});
+			
+				$('.add-button').on('click', function(e){
+					$('#popup-group').show();
+				});
+				
+				$('.down-button').on('click', function(e){
+					var target = $(e.currentTarget);
+					var dropdown = target.siblings('.dropdown');
+					var current = $('.open');
+					dropdown.addClass('open');
+					current.removeClass('open');
+					e.stopPropagation();
+				});
+				
+				function addTask() {			// when adding a task the functionality for delete is gone not sure why???
+					//$('#newTask').show();
+					createdTask = $(".mytask").val();
+					$(".mytask").val("");
+			
+					$("#lower-list").append(' <div class="list-item-edit"> <input type="text" name="task1" value="'+createdTask+'">' +
+							' <img class="delete" src="delete.png" height="14" width="14" align="right"> </div>');
+				
+					$('#popup-group').hide();
+				}
+				
+				$('#back').on('click', function(e){
+					window.location.href = 'Calendar.html';	
+				});
+				
+				$('#save-list').on('click', function(e){
+					window.location.href = 'ViewList.html';	
+				});
+
+				
+				
+				$('.delete').on('click', function(e){
+					$(e.currentTarget).parent().remove();
+				});
+				
+				$('#lower-list').on('click', '.delete', function(e){
+					$(e.currentTarget).parent().remove();
+				});
+				
+				$('.close').on('click', function(e){
+					$('#popup-group').hide();
+					$(".mytask").val("");
+				});
+				
+				$('.create').on('click', function(e){
+					addTask();
+				});
+
+				
+			});
+		</script>
+</head>
+	<body>	
+		<div id="general-list">
+			<div id="top-menu">
+				<div id="menu" class="edit-menu"> </div>
+			</div>
+			
+			<div id = "top-list-edit">
+				<div class="list-item-edit">
+				<input type="text" name="task1" value="Date: date"></input>
+				</div>
+			
+				<div class="list-item-edit">
+				<input type="text" name="task1" value="Group:"></input>
+				<img class="down-button" src="sidearrow.png" height="25" width="25" align="right">
+				<div id="group-dropdown" class="dropdown">
+					<div class="option">Group 1</div>
+					<div class="option">Group 2</div>
+					<div class="option">Group 3</div>
+				</div>
+				</div>
+			
+				<div class="list-item-edit">
+				<input type="text" name="task1" value="Reminder:"></input>
+				<img class="down-button" src="sidearrow.png" height="25" width="25" align="right">
+				<div id="reminder-dropdown" class="dropdown">
+					<div class="option">No Reminders</div>
+					<div class="option">Add Reminder</div>
+				</div>
+				</div>
+			</div>
+			
+			<div id = "lower-list">
+				<div class="list-item-edit">
+				<input type="text" name="task1" value="bananas">
+				<img class="delete" src="delete.png" height="16" width="16" align="right">
+				</div>
+			
+				<div class="list-item-edit">
+				<input type="text" name="task1" value="donuts">
+				<img class="delete" src="delete.png" height="16" width="16" align="right">
+				</div>
+			
+				<div class="list-item-edit">
+				<input type="text" name="task1" value="ramen">
+				<img class="delete" src="delete.png" height="16" width="16" align="right">
+				</div>
+	
+				<div class="list-item-edit">
+				<input type="text" name="task1" value="doritos">
+				<img class="delete" src="delete.png" height="16" width="16" align="right">
+				</div>
+			
+			<div class = "add-button"></div>
+				
+			</div>
+			
+		</div>
+		
+		<div id="popup-group">
+			<div id="gray"></div>
+			<div id="popup">
+				<div id="popup-title">
+					New Task
+					<!--<img class="close" src="delete.png" height="14" width="14" align="right">-->
+				</div>
+				<div id="popup-body">
+					<input type="text" name="task" placeholder="Task" class="mytask" maxlength="25" >
+					<div class="close" id="popupButton">Close</div>
+					<div class="create" id="popupButton">Add</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div id="bottom-menu">
+			<div id="back" class="button">Calendar</div>
+			<div id="save-list" class="button">Save</div>
+		</div>
+		
+	</body>
+
+</html>
+

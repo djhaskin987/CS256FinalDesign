@@ -1,0 +1,276 @@
+			.button {
+				width: 113px;
+				height: 22px;
+				color: white;
+				background-image: url('button.png');
+				background-size: 100.5% 100%;
+				background-repeat: no-repeat;
+				padding: 0px;
+				margin: 0px;
+				position: relative;
+				z-index: 1;
+				display: inline-block;
+				padding-top: 3px;
+			}
+			.add-button {
+				width: 113px;
+				height: 40px;
+				color: white;
+				background-image: url('addtaskbutton.png');
+				background-size: 100.5% 100%;
+				background-repeat: no-repeat;
+				padding-left: 0px;
+				margin-left: 10px;
+				position: relative;
+				z-index: 1;
+				display: inline-block;
+				padding-top: 3px;
+			}
+			.down-button {
+				position: relative;
+				
+			}
+			.menu {
+				width: 224px;
+				height: 26px;
+				color: white;
+				background-image: url('generallistbanner.png');
+				background-size: 100.5% 100%;
+				background-repeat: no-repeat;
+				padding: 0px;
+				margin: 0px;
+				position: relative;
+				z-index: 1;
+				display: inline-block;
+				padding-top: 3px;
+			}
+			
+			.view-menu {
+				width: 224px;
+				height: 26px;
+				color: white;
+				background-image: url('viewlistbanner.png');
+				background-size: 100.5% 100%;
+				background-repeat: no-repeat;
+				padding: 0px;
+				margin: 0px;
+				position: relative;
+				z-index: 1;
+				display: inline-block;
+				padding-top: 3px;
+			}
+			.edit-menu {
+				width: 224px;
+				height: 26px;
+				color: white;
+				background-image: url('editlistbanner.png');
+				background-size: 100.5% 100%;
+				background-repeat: no-repeat;
+				padding: 0px;
+				margin: 0px;
+				position: relative;
+				z-index: 1;
+				display: inline-block;
+				padding-top: 3px;
+			}
+			
+			#checkBox {
+				background:url(delete.png);
+				background-repeat: no-repeat;
+				background-size 100% 100%; 
+			}
+			
+			#plus-task{
+				background-image: url(addtaskbutton.png);
+				background-repeat: no-repeat;
+				background-size 100% 100%;
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+			
+			
+			#top-menu .button, #top-menu .option {
+				text-align: center;
+				width: 76px;
+				padding-top: 3px;
+			}
+			
+			#month-selector {
+				top: 0px;
+				left: 0px;
+			}
+			
+			#year-nav {
+				position: relative;
+				top: 0px;
+				left: -6px;
+			}
+			
+			#groups {
+				top: 0px;
+				left: -12px;
+			}
+			
+			#day-list {
+				background-image: url('listBackground.png');
+				width: 224px;
+				height: 113px;
+				position: relative;
+			}
+			
+			#general-list {
+				background-image: url('background.png');
+				width: 224px;
+				height: 335px;
+				position: relative;
+			}
+			
+			#top-list-view {
+				padding: 6px 0px;
+				width: 224px;
+				height: 70px;
+				position: relative;
+			}
+			#top-list-edit {
+				padding: 6px 0px;
+				width: 224px;
+				height: 100px;
+				position: relative;
+			}
+			#lower-list {
+				width: 224px;
+				height: 235px;
+				position: relative;
+			}
+			#add-task {
+				background-image: url('addtaskbutton.png');
+				height: 40px;
+			}
+			
+			.list-item {
+				padding: 2px 0px;
+				font-size: 14px;
+				width: 214px;
+				background-image: url('listItem.png');
+				background-size: 100% 100%;
+				position: relative;
+				padding-right: 10px;
+				top: -1px;
+			}
+			.list-item-edit {
+				padding: 2px 2px;
+				font-size: 14px;
+				width: 214px;
+				background-size: 100% 100%;
+				position: relative;
+				padding-right: 12px;
+				padding-left: 10px;
+				top: -1px;
+			}
+			
+			.delete{
+				padding-right: 10px;
+				position: relative;
+				top: 2px;
+			}
+			
+			.dropdown {
+				position: absolute;
+				display: none;
+				z-index: 2;
+			}
+			
+			nav {
+				width: 76px;
+				display: inline-block;
+			}
+			
+			.option {
+				background-image: url('listItem.png');
+				background-size: 100% 100%;
+				margin-top: -3px;
+				padding-bottom: 3px;
+			}
+			
+			#top-menu #month-dropdown,  #top-menu #year-dropdown{
+				padding-top: 0px;
+			}
+			#list-item-edit #group-dropdown,  #list-item-edit #reminder-dropdown{
+				padding-top: 0px;
+				margin-left: 0px;
+			}
+			
+			.open {
+				display: inline-block;
+			}
+			
+			#bottom-menu {
+				margin-top: -3px;
+			}
+			
+			.list-item {
+				margin-top: -2px;
+			}
+			#top-label-item {
+				padding-top: 6px;
+				padding-left: 12px;
+				padding-bottom: 3px;
+			}
+			
+			#bottom-menu .button {
+				margin-left: 0px;
+				text-align: center;
+			}
+
+			#add-task {
+				left: -6px;
+			}
+			#edit-list {
+				left: -6px;
+			}
+			#save-list {
+				left: -6px;
+			}
+			
+#popup-group {
+	position: absolute;
+	z-index: 5;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#gray {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255,255,255);
+	opacity: 0.2;
+	z-index: 3;
+}
+
+#popup {
+	position: absolute;
+	top: 120px;
+	left: 20px;
+	width: 200px;
+}
+
+#popup-title {
+	background-image: url('popupTitle.png');
+	background-size: 100% 100%;
+	height: 20px;
+	text-align: center;
+	padding-top: 2px;
+	padding-right: 7px;
+}
+
+#popup-body {
+	margin-top: -1.2px;
+	padding-left: 10px;
+	background-image: url('popupBody.png');
+	background-size: 100% 100%;
+	min-height: 60px;
+}
+
+			

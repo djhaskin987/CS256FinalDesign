@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>General To-Do List</title>
+		<link rel="stylesheet" type="text/css" href="generalList.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#popup-group').hide();
+				$('#newTask').hide();
+				//Close dropdown menus when the user clicks
+				$('body').on('click', function(e){
+					$('.open').removeClass('open');
+				});
+			
+				$('#add-task').on('click', function(e){
+					$('#popup-group').show();
+				});
+
+				function addTask() {			// when adding a task the functionality for delete is gone not sure why???
+					//$('#newTask').show();
+					createdTask = $(".mytask").val();
+					$(".mytask").val("");
+			
+					$("#general-list").append(' <div class="list-item"> <input type="checkbox" name="task1" value="task">' +
+							'&nbsp;&nbsp;&nbsp;' + createdTask + ' <img class="delete" src="delete.png" height="14" width="14" align="right"> </div>');
+				
+					$('#popup-group').hide();
+				}
+
+				$('#Calendar').on('click', function(e){
+					window.location.href = 'Calendar.html';	
+				});
+				
+				$('.delete').on('click', function(e){
+					$(e.currentTarget).parent().remove();
+				});
+
+				$('.close').on('click', function(e){
+					$('#popup-group').hide();
+					$(".mytask").val("");
+				});
+				
+				$('.create').on('click', function(e){
+					addTask();
+				});
+
+				$('#general-list').on('click', '.delete', function(e){
+					$(e.currentTarget).parent().remove();
+				});
+
+				
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div id="general-list">
+			<div id="top-menu">
+				<div id="menu" class="menu">General To-do List </div>
+			</div>
+			
+			<div class="list-item">
+				<input type="checkbox" name="task1" value="task">
+				&nbsp;&nbsp;X-box game
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+			<div class="list-item">
+				<input type="checkbox" name="task1" value="task">
+				&nbsp;&nbsp;Wii game
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+			<div class="list-item">
+				<input type="checkbox" name="task1" value="task">
+				&nbsp;&nbsp;Eggs
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+			<div class="list-item">
+				<input type="checkbox" name="task1" value="task">
+				&nbsp;&nbsp;Bread
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+			<div class="list-item">
+				<input type="checkbox" name="task1" value="task">
+				&nbsp;&nbsp;Milk
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+			<div class="list-item" id="newTask">
+				<input type="checkbox" name="task1" value="task">
+				&nbsp;&nbsp;new Task
+				<img class="delete" src="delete.png" height="14" width="14" align="right">
+			</div>
+		</div>
+
+		<div id="popup-group">
+			<div id="gray"></div>
+			<div id="popup">
+				<div id="popup-title">
+					New Task
+					<!--<img class="close" src="delete.png" height="14" width="14" align="right">-->
+				</div>
+				<div id="popup-body">
+					<input type="text" name="task" placeholder="Task" class="mytask" maxlength="15" >
+					<div class="close" id="popupButton">Close</div>
+					<div class="create" id="popupButton">Add</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div id="bottom-menu">
+			<div id="Calendar" class="button">Calendar</div>
+			<div id="add-task" class="button">+ Task</div>
+		</div>
+	</body>
+</html>
