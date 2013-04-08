@@ -1,0 +1,219 @@
+body {
+    font-family: "Century Schoolbook", "Bookman Old Style", "Bitstream Charter", "Times New Roman", serif;
+    font-size:20px;
+}
+
+#content-window {
+    width:255px;
+    height:383px;
+    vertical-align:top;
+    padding:0px;
+    margin:0px;
+    display:inline-block;
+    font-size:0px;
+    background-image: url('../img/Background_LightBlue.png');
+    background-size: 255px 383px;
+    background-repeat: no-repeat;
+}
+
+.dropdown-window {
+    width:255px;
+    vertical-align:top;
+    padding:0px;
+    margin:0px;
+    display:inline-block;
+    font-size:0px;
+    background-image: url('../img/Background_LightBlue.png');
+    background-size: 255px 100%;
+    background-repeat: no-repeat;
+}
+
+.popup-window {
+    width:200px;
+    vertical-align:top;
+    padding:0px;
+    margin:0px;
+    display:inline-block;
+    font-size:0px;
+    background-image: url('../img/Background_LightBlue.png');
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    font-size: 20px;
+	position: absolute;
+	z-index: 5;
+	position: absolute;
+	top: 120px;
+	left: 30px;
+	width: 200px;
+}
+
+.title-bar {
+    display:inline-block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    width: 255px;
+    height: 30px;
+    background-image: url('../img/Background_BlueBar.png');
+    background-size: 255px 30px;
+    background-repeat: no-repeat;
+}
+
+.bar {
+    display:inline-block;
+    font-size: 20px;
+    width: 255px;
+    height: 30px;
+    padding-left: 5px;
+}
+
+.list-bar {
+    display:inline-block;
+    font-size: 20px;
+    width: 255px;
+    height: 25px;
+    padding-left: 5px;
+    float:left;
+    background-image: url('../img/Background_ListItem.png');
+    background-repeat: no-repeat;
+    background-size: 255px 30px;
+}
+.dropdown-bar {
+    display:inline-block;
+    font-size: 20px;
+    width: 255px;
+    height: 25px;
+    padding-left: 5px;
+    float:left;
+    background-image: url('../img/Background_ListItem.png');
+    background-repeat: no-repeat;
+    background-size: 255px 30px;
+}
+.title-popup-bar {
+    display:inline-block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    width: 200px;
+    height: 30px;
+    background-image: url('../img/Background_BlueBar.png');
+    background-size: 200px 30px;
+    background-repeat: no-repeat;
+	text-align: center;
+	padding-top: 2px;
+	padding-right: 7px;
+}
+
+.popup-bar {
+    display:inline-block;
+    font-size: 20px;
+    width: 200px;
+    height: 25px;
+    padding-left: 5px;
+    float:left;
+    background-image: url('../img/Background_ListItem.png');
+    background-repeat: no-repeat;
+    background-size: 200px 30px;
+}
+
+#group-name {
+    padding: 5px;
+    width: 195px;
+    height: 20px;
+    float:left;
+}
+.white-bar {
+    width: 255px;
+    height: 20px;
+    padding: 5px;
+    font-size: 20px;
+    float:left;
+    background-image: url('../img/Background_WhiteBar.png');
+    background-size: 253px 30px;
+    background-repeat: no-repeat;
+}
+.popup-white-bar {
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    font-size: 20px;
+    float:left;
+    background-image: url('../img/Background_WhiteBar.png');
+    background-size: 200px 30px;
+    background-repeat: no-repeat;
+}
+
+
+.list-item {
+    width: 195px;
+    height: 20px;
+    float:left;
+}
+.input-item {
+    border: 0px;
+    width: 195px;
+    height: 20px;
+    float:left;
+}
+
+.input-label-item {
+    border: 0px;
+    width: 195px;
+    height: 20px;
+    float:left;
+    background-color: #ffffff;
+    color: #a0a0a0;
+}
+
+.dropdown-button {
+    size: 55px 24px;
+    padding-right: 10px;
+    float:right;
+}
+
+.dropup-button {
+    size: 35px 20px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    top: 25px;
+    float:right;
+}
+
+.delete-button {
+    size: 20px 20px;
+    position:relative;
+    top:-1px;
+    padding-right: 20px;
+    float:right;
+}
+
+
+#popup-group {
+    font-size: 20px;
+	position: absolute;
+	z-index: 5;
+	top: 0px;
+	left: 0px;
+	width: 200px;
+	height: 150px;
+}
+
+#gray {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255,255,255);
+	opacity: 0.2;
+	z-index: 3;
+}
+
+#popup {
+}
+
+#popup-body {
+	margin-top: -1.2px;
+	padding-left: 10px;
+	background-image: url('../img/popupBody.png');
+	background-size: 100% 100%;
+	min-height: 60px;
+}
+

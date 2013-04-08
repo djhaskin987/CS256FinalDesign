@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="content-window">
-            <div class="bar" id="group-title-bar"></div>
+            <div class="title-bar">Calendar Group</div>
             <div class="white-bar" id="group-display">
                 <input class="input-item" value="Group1" type="text"></input>
                 <img class="dropdown-button" src="img/Button_DropDown.png"/>
@@ -33,6 +33,67 @@
                 <input class="input-item" value="Add User" type="text"></input>
                 <img class="dropdown-button" src="img/Button_DropDown.png"/>
             </div>
+            <div class="popup-window">
+                <div id="gray"></div>
+                <div class="title-popup-bar">
+                    <div id="popup-title">
+                        New Task
+                        <!--<img class="close" src="delete.png" height="14" width="14" align="right">-->
+                    </div>
+                    <div id="popup-body">
+                        <input type="text" name="task" placeholder="Task" class="mytask" maxlength="25" >
+                        <div class="close" id="popupButton">Close</div>
+                        <div class="create" id="popupButton">Add</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
+        <div class="dropdown-window">
+            <div class="white-bar" id="group-display">
+                <input class="input-label-item" value="User Group" type="text" disabled="disabled"></input>
+                <img class="dropup-button" src="img/Button_DropUp.png"/>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Group 1</div>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Group 2</div>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Group 3</div>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Add Group...</div>
+            </div>
+        </div>
+        <div class="dropdown-window">
+            <div class="white-bar" id="group-display">
+                <input class="input-label-item" value="Add User" type="text" disabled="disabled"></input>
+                <img class="dropup-button" src="img/Button_DropUp.png"/>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Member 1</div>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Member 2</div>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Member 3</div>
+            </div>
+            <div class="dropdown-bar">
+                <div class="list-item">Add Member...</div>
+            </div>
+        </div>
+        <!--
+        <div class="popup-white-bar" id="group-display">
+            <input class="input-item" value="Member 1" type="text"></input>
+            <img class="dropdown-button" src="img/Button_DropDown.png"/>
+        </div>
+        <div class="popup-white-bar" id="group-display">
+            <input class="input-item" value="555-555-5555" type="text"></input>
+            <img class="dropdown-button" src="img/Button_DropDown.png"/>
+        </div>
+    </div>
+    -->
+</body>
 </html>

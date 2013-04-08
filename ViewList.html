@@ -4,65 +4,65 @@
 		<title>View List</title>
 		<link rel="stylesheet" type="text/css" href="list.css">
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		
+
 		<script>
 			$(document).ready(function(){
 				$('#popup-group').hide();
 				$('#newTask').hide();
-				
+
 				//Close dropdown menus when the user clicks
 				$('body').on('click', function(e){
 					$('.open').removeClass('open');
 				});
-			
+
 				$('.add-button').on('click', function(e){
 					$('#popup-group').show();
 				});
-				
+
 				function addTask() {			// when adding a task the functionality for delete is gone not sure why???
 					//$('#newTask').show();
 					createdTask = $(".mytask").val();
 					$(".mytask").val("");
-			
+
 					$("#general-list").append(' <div class="list-item"> <input type="checkbox" name="task1" value="task">' +
 							'&nbsp;&nbsp;&nbsp;' + createdTask);
-				
+
 					$('#popup-group').hide();
 				}
-				
+
 				$('#back').on('click', function(e){
-					window.location.href = 'Calendar.html';	
-				});
-				
-				$('#edit-list').on('click', function(e){
-					window.location.href = 'EditList.html';	
+					window.location.href = 'Calendar.html';
 				});
 
-				
+				$('#edit-list').on('click', function(e){
+					window.location.href = 'EditList.html';
+				});
+
+
 				$('.delete').on('click', function(e){
 					$(e.currentTarget).parent().remove();
 				});
-				
+
 				$('.close').on('click', function(e){
 					$('#popup-group').hide();
 					$(".mytask").val("");
 				});
-				
+
 				$('.create').on('click', function(e){
 					addTask();
 				});
-				
+
 				$('#list-item').on('click', '.delete', function(e){
 					$(e.currentTarget).parent().remove();
 				});
 
-				
+
 			});
 		</script>
 </head>
 
 	<body>
-		
+
 		<div id="general-list">
 			<div id="top-menu">
 				<div id="menu" class="view-menu"> </div>
@@ -72,36 +72,36 @@
 				<label id="top-label-item">group A</label> <br>
 				<label id="top-label-item">Reminder: none</label>
 			</div>
-			
+
 			<div class="list-item">
 				<input type="checkbox" name="task1" value="task">
 				&nbsp;&nbsp;apples
-			
+
 			</div>
 			<div class="list-item">
 				<input type="checkbox" name="task1" value="task">
 				&nbsp;&nbsp;bananas
-				
+
 			</div>
 			<div class="list-item">
 				<input type="checkbox" name="task1" value="task">
 				&nbsp;&nbsp;donuts
-				
+
 			</div>
 			<div class="list-item">
 				<input type="checkbox" name="task1" value="task">
 				&nbsp;&nbsp;ramen
-				
+
 			</div>
 			<div class="list-item">
 				<input type="checkbox" name="task1" value="task">
 				&nbsp;&nbsp;doritos
 			</div>
-			
-			
+
+
 			<div class = "add-button"></div>
 		</div>
-		
+
 		<div id="popup-group">
 			<div id="gray"></div>
 			<div id="popup">
@@ -113,16 +113,16 @@
 					<input type="text" name="task" placeholder="Task" class="mytask" maxlength="25" >
 					<div class="close" id="popupButton">Close</div>
 					<div class="create" id="popupButton">Add</div>
-					
+
 				</div>
 			</div>
 		</div>
-		
+
 		<div id="bottom-menu">
 			<div id="back" class="button">Calendar</div>
 			<div id="edit-list" class="button">Edit</div>
 		</div>
-		
+
 	</body>
 
 </html>
