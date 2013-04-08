@@ -156,7 +156,7 @@ body {
 }
 
 
-.list-item {
+.member-list-item, .user-list-item, .list-item {
     width: 195px;
     height: 20px;
     float:left;

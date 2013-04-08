@@ -26,20 +26,30 @@
           $('#NewUserPopup').show();
         });
         $('#add-cancel').on('click', function(e){
-            $('#NewUserPopup').hide();
+          $('#NewUserPopup').hide();
+        });
+        $('#edit-cancel').on('click', function(e){
+          $('#EditUserPopup').hide();
         });
         $('#add-save').on('click', function(e){
-            AddUser();
-            $('#NewUserPopup').hide();
+          AddUser();
+          $('#NewUserPopup').hide();
         });
         function AddUser() {
           createdUserName = $("#new-name").val();
           createdUserPhoneNumber = $("#new-phone-number").val();
           $("#new-name").val("");
           $("#new-phone-number").val("");
+          $("#users").append('<div class="dropdown-bar"> <div class="list-item" id="' + createdUserPhoneNumber + '">' + createdUserName + '</div></div>');
+        }
+        $('.user-list-item').on('click', function(e) {
+          InductMember(e);
+        });
 
-          $("#members").append('<div class="list-bar"> <div class="list-item" id=' + createdUserPhoneNumber + '>' + createdUserName + '</div> <img class="delete-button" src="img/Button_Delete.png"/> </div>');
-
+          function InductMember(element) {
+            inductedUserName = element.val();
+            inductedUserPhoneNumber = element.id();
+            $("#members").append('<div class="list-bar"> <div class="list-item" id=' + inductedUserPhoneNumber + '>' + inductedUserName + '</div> <img class="delete-button" src="img/Button_Delete.png"/> </div>');
           }
 
           $('#back').on('click', function(e){
@@ -78,21 +88,17 @@
           <div class="white-bar" id="group-display">
             <input class="input-item" value="Group1" type="text"></input>
             <img class="dropdown-button" id="group-dropdown-button" src="img/Button_DropDown.png"/>
-        </div>
-        <div id="members">
-          <div class="list-bar">
-            <div id="member1" class="list-item">Member 1</div>
-            <img class="delete-button" src="img/Button_Delete.png"/>
           </div>
-          <div class="list-bar">
-            <div id="member2" class="list-item">Member 2</div>
-            <img class="delete-button" src="img/Button_Delete.png"/>
+          <div id="members">
+            <div class="list-bar">
+              <div id="5558884932" class="member-list-item">Member 1</div>
+              <img class="delete-button" src="img/Button_Delete.png"/>
+            </div>
+            <div class="list-bar">
+              <div id="5559994333" class="member-list-item">Member 3</div>
+              <img class="delete-button" src="img/Button_Delete.png"/>
+            </div>
           </div>
-          <div class="list-bar">
-            <div id="member3" class="list-item">Member 3</div>
-            <img class="delete-button" src="img/Button_Delete.png"/>
-        </div>
-    </div>
           <div class="bar">
             <div class="list-item"></div>
           </div>
@@ -125,18 +131,20 @@
               <input class="input-label-item" value="Add User" type="text" disabled="disabled"></input>
               <img class="dropup-button" id="user-dropup-button" src="img/Button_DropUp.png"/>
             </div>
-            <div class="dropdown-bar">
-              <div class="list-item">User 1</div>
+            <div id="users">
+              <div class="dropdown-bar">
+                <div id="5558884932" class="user-list-item">User 1</div>
+              </div>
+              <div class="dropdown-bar">
+                <div id="5559994932" class="user-list-item">User 2</div>
+              </div>
+              <div class="dropdown-bar">
+                <div id="5559994333" class="user-list-item">User 3</div>
+              </div>
             </div>
-            <div class="dropdown-bar">
-              <div class="list-item">User 2</div>
-            </div>
-            <div class="dropdown-bar">
-              <div class="list-item">User 3</div>
-            </div>
-            <div class="dropdown-bar">
-              <div class="list-item" id="user-add-button">Add User...</div>
-            </div>
+              <div class="dropdown-bar">
+                <div class="list-item" id="user-add-button">Add User...</div>
+              </div>
           </div>
         </div>
         <div class="popup-window" id="NewUserPopup">
