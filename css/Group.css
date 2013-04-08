@@ -78,6 +78,7 @@ body {
     background-repeat: no-repeat;
     background-size: 255px 30px;
 }
+
 .dropdown-bar {
     display:inline-block;
     font-size: 20px;
@@ -89,6 +90,7 @@ body {
     background-repeat: no-repeat;
     background-size: 255px 30px;
 }
+
 .title-popup-bar {
     display:inline-block;
     text-align: center;
@@ -206,14 +208,38 @@ body {
 	z-index: 3;
 }
 
-#popup {
-}
-
-#popup-body {
+.popup-body {
 	margin-top: -1.2px;
 	padding-left: 10px;
-	background-image: url('../img/popupBody.png');
+	background-image: url('../img/Background_LightBlue.png');
 	background-size: 100% 100%;
 	min-height: 60px;
 }
-
+.popup-button-left {
+    size: 100px 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    background-image: url('../img/Button_PopupRound.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    float:left;
+    padding-left: 10px;
+    padding-right: 10px;
+    left: 24px;
+}
+.popup-button-right {
+    size: 100px 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    background-image: url('../img/Button_PopupRound.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    float:right;
+    padding-left: 10px;
+    padding-right: 10px;
+    right: 24px;
+}
