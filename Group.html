@@ -1,86 +1,169 @@
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Groups</title>
-        <link rel="stylesheet" type="text/css" href="css/Group.css">
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Groups</title>
+    <link rel="stylesheet" type="text/css" href="css/Group.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#NewUserPopup').hide();
+        $('#EditUserPopup').hide();
+
+        $('#group-dropdown-button').on('click', function(e){
+          $('#group-dropdown').show();
+        });
+        $('#group-dropup-button').on('click', function(e){
+          $('#group-dropdown').hide();
+        });
+        $('#user-dropdown-button').on('click', function(e){
+          $('#user-dropdown').show();
+        });
+        $('#user-dropup-button').on('click', function(e){
+          $('#user-dropdown').hide();
+        });
+
+        $('#user-add-button').on('click', function(e){
+          $('#NewUserPopup').show();
+        });
+        $('#add-cancel').on('click', function(e){
+            $('#NewUserPopup').hide();
+        });
+        $('#add-save').on('click', function(e){
+            AddUser();
+            $('#NewUserPopup').hide();
+        });
+        function AddUser() {
+          createdUserName = $("#new-name").val();
+          createdUserPhoneNumber = $("#new-phone-number").val();
+          $("#new-name").val("");
+          $("#new-phone-number").val("");
+
+          $("#members").append('<div class="list-bar"> <div class="list-item" id=' + createdUserPhoneNumber + '>' + createdUserName + '</div> <img class="delete-button" src="img/Button_Delete.png"/> </div>');
+
+          }
+
+          $('#back').on('click', function(e){
+            window.location.href = 'Calendar.html';
+          });
+
+          $('#edit-list').on('click', function(e){
+            window.location.href = 'EditList.html';
+          });
+
+
+          $('.delete-button').on('click', function(e){
+            $(e.currentTarget).parent().remove();
+          });
+
+          $('.close').on('click', function(e){
+            $('#popup-group').hide();
+            $(".mytask").val("");
+          });
+
+          $('.create').on('click', function(e){
+            addTask();
+          });
+
+          $('#list-item').on('click', '.delete', function(e){
+            $(e.currentTarget).parent().remove();
+          });
+        });
+      </script>
+      <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     </head>
     <body>
-        <div id="content-window">
-            <div class="title-bar">Calendar Group</div>
+      <div id="content-window">
+        <div class="title-bar">Calendar Group</div>
+        <div class="dropdown-container">
+          <div class="white-bar" id="group-display">
+            <input class="input-item" value="Group1" type="text"></input>
+            <img class="dropdown-button" id="group-dropdown-button" src="img/Button_DropDown.png"/>
+        </div>
+        <div id="members">
+          <div class="list-bar">
+            <div id="member1" class="list-item">Member 1</div>
+            <img class="delete-button" src="img/Button_Delete.png"/>
+          </div>
+          <div class="list-bar">
+            <div id="member2" class="list-item">Member 2</div>
+            <img class="delete-button" src="img/Button_Delete.png"/>
+          </div>
+          <div class="list-bar">
+            <div id="member3" class="list-item">Member 3</div>
+            <img class="delete-button" src="img/Button_Delete.png"/>
+        </div>
+    </div>
+          <div class="bar">
+            <div class="list-item"></div>
+          </div>
+          <div class="dropdown-window" id="group-dropdown">
             <div class="white-bar" id="group-display">
-                <input class="input-item" value="Group1" type="text"></input>
-                <img class="dropdown-button" src="img/Button_DropDown.png"/>
+              <input class="input-label-item" value="User Group" type="text" disabled="disabled"></input>
+              <img class="dropup-button" id="group-dropup-button" src="img/Button_DropUp.png"/>
             </div>
-            <div class="list-bar">
-                <div class="list-item">Member 1</div>
-                <img class="delete-button" src="img/Button_Delete.png"/>
+            <div class="dropdown-bar">
+              <div class="list-item">Group 1</div>
             </div>
-            <div class="list-bar">
-                <div class="list-item">Member 2</div>
-                <img class="delete-button" src="img/Button_Delete.png"/>
+            <div class="dropdown-bar">
+              <div class="list-item">Group 2</div>
             </div>
-            <div class="list-bar">
-                <div class="list-item">Member 3</div>
-                <img class="delete-button" src="img/Button_Delete.png"/>
+            <div class="dropdown-bar">
+              <div class="list-item">Group 3</div>
             </div>
-            <div class="bar">
-                <div class="list-item"></div>
+            <div class="dropdown-bar">
+              <div class="list-item">Add Group...</div>
             </div>
+          </div>
+        </div>
+        <div class="dropdown-container">
+          <div class="white-bar" id="group-display">
+            <input class="input-item" value="Add User" type="text"></input>
+            <img class="dropdown-button" id="user-dropdown-button" src="img/Button_DropDown.png"/>
+          </div>
+          <div class="dropdown-window" id="user-dropdown">
+            <div class="white-bar" id="group-display">
+              <input class="input-label-item" value="Add User" type="text" disabled="disabled"></input>
+              <img class="dropup-button" id="user-dropup-button" src="img/Button_DropUp.png"/>
+            </div>
+            <div class="dropdown-bar">
+              <div class="list-item">User 1</div>
+            </div>
+            <div class="dropdown-bar">
+              <div class="list-item">User 2</div>
+            </div>
+            <div class="dropdown-bar">
+              <div class="list-item">User 3</div>
+            </div>
+            <div class="dropdown-bar">
+              <div class="list-item" id="user-add-button">Add User...</div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-window" id="NewUserPopup">
+          <div id="gray"></div>
+          <div class="title-popup-bar">
+            <div id="popup-title">New User</div>
+            <div class="popup-body">
+              <input type="text" name="NewName" placeholder="Name" id="new-name" maxlength="25" >
+              <input type="text" name="NewPhoneNumber" placeholder="Phone Number" id="new-phone-number" maxlength="25" >
 
-            <div class="white-bar" id="group-display">
-                <input class="input-item" value="Add User" type="text"></input>
-                <img class="dropdown-button" src="img/Button_DropDown.png"/>
+              <div class="popup-button-left" id="add-cancel">Cancel</div>
+              <div class="popup-button-right" id="add-save">Save</div>
             </div>
-            <div class="popup-window">
-                <div id="gray"></div>
-                <div class="title-popup-bar">
-                    <div id="popup-title">New User</div>
-                    <div class="popup-body">
-                        <input type="text" name="task" placeholder="Task" class="mytask" maxlength="25" >
+          </div>
+        </div>
+        <div class="popup-window" id="EditUserPopup">
+          <div id="gray"></div>
+          <div class="title-popup-bar">
+            <div id="popup-title">Edit User</div>
+            <div class="popup-body">
+              <input type="text" name="task" placeholder="Task" class="mytask" maxlength="25" >
 
-                        <div class="popup-button-left" id="cancel">Cancel</div>
-                        <div class="popup-button-right" id="save">Save</div>
-                    </div>
-                </div>
+              <div class="popup-button-left" id="edit-cancel">Cancel</div>
+              <div class="popup-button-right" id="edit-save">Add</div>
             </div>
+          </div>
         </div>
-        <div class="dropdown-window">
-            <div class="white-bar" id="group-display">
-                <input class="input-label-item" value="User Group" type="text" disabled="disabled"></input>
-                <img class="dropup-button" src="img/Button_DropUp.png"/>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Group 1</div>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Group 2</div>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Group 3</div>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Add Group...</div>
-            </div>
-        </div>
-        <div class="dropdown-window">
-            <div class="white-bar" id="group-display">
-                <input class="input-label-item" value="Add User" type="text" disabled="disabled"></input>
-                <img class="dropup-button" src="img/Button_DropUp.png"/>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Member 1</div>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Member 2</div>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Member 3</div>
-            </div>
-            <div class="dropdown-bar">
-                <div class="list-item">Add Member...</div>
-            </div>
-        </div>
-</body>
-</html>
+      </div>
+    </body>
+  </html>

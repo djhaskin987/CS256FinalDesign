@@ -3,6 +3,12 @@ body {
     font-size:20px;
 }
 
+.open {
+    display: inline-block;
+}
+.dropdown-container {
+  position: relative;
+}
 #content-window {
     width:255px;
     height:383px;
@@ -26,6 +32,11 @@ body {
     background-image: url('../img/Background_LightBlue.png');
     background-size: 255px 100%;
     background-repeat: no-repeat;
+    z-index: 2;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .popup-window {
@@ -41,7 +52,6 @@ body {
     font-size: 20px;
 	position: absolute;
 	z-index: 5;
-	position: absolute;
 	top: 120px;
 	left: 30px;
 	width: 200px;
