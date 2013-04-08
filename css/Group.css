@@ -253,3 +253,10 @@ body {
     padding-right: 10px;
     right: 24px;
 }
+			#bottom-menu {
+				margin-top: -3px;
+			}
+			#bottom-menu .button {
+				margin-left: 0px;
+				text-align: center;
+			}
